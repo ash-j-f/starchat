@@ -1,4 +1,4 @@
-# Starchat web MVC application
+# Starchat - Cybersecurity and MVC example application
 
 A web application designed to demonstrate the Model-View-Controller (MVC) design pattern and cybersecurity concepts in practice.
 
