@@ -71,7 +71,7 @@ that enable the MVC system. They also protect the /app and /conf directories fro
 
 * JavaScript AJAX calls are used to update page contents without reloading page (Chat page). https://en.wikipedia.org/wiki/Ajax_(programming)
 
-* the user interface features a professionally made UI using correctly implementing HTML5, CSS3 and JavaScript.
+* The user interface features a professionally made UI using correctly implementing HTML5, CSS3 and JavaScript.
 
 * The site has its own "site icon" (which appears in the browser tab next to the site and page title).
 
