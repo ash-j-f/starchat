@@ -1,5 +1,20 @@
 <?php
 
+/**
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 /** 
 * App class, the core of the application.
 * This class provides the core of the MVC framework, and redirects an incmong request to the correct controller.
@@ -9,7 +24,7 @@
 * https://github.com/panique and https://github.com/JaoNoctus and their simple MVC framework "MINI3" https://github.com/panique/mini3
 * An excellent MVC tutorial by https://codecourse.com/ at https://www.youtube.com/watch?v=OsCTzGASImQ&list=PLfdtiltiRHWGXVHXX09fxXDi-DqInchFD 
 *
-* @author Ashley Flynn - CIT214642 - AIE & CIT - 2019 - https://ajflynn.io/
+* @author Ashley Flynn - AIE & CIT - 2019 - https://ajflynn.io/
 */
 
 class App

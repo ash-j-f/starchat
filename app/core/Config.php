@@ -1,12 +1,27 @@
 <?php
 
 /**
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+/**
 * Config class.
 * Provides access to the configuration options defined in the application's "config.ini" file.
 * Parses config.ini file and store result per request in a static variable.
 * Config options can be accessed anywhere in the codebase by using "Config::getConfigOption('option_name')".
 * ABSTRACT class, to be used as a singleton only.
-* @author Ashley Flynn - CIT214642 - AIE & CIT - 2019 - https://ajflynn.io/
+* @author Ashley Flynn - AIE & CIT - 2019 - https://ajflynn.io/
 */
 abstract class Config
 {

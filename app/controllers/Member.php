@@ -1,10 +1,25 @@
 <?php
 
 /**
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+/**
 * Member controller.
 * Provides functions relating to members such as retrieving a channel's member list, adding or removing channel members, etc.
 * Also privides channel administrative functions such as banning and unbanning users, listing banned users, etc.
-* @author Ashley Flynn - CIT214642 - AIE & CIT - 2019 - https://ajflynn.io/
+* @author Ashley Flynn - AIE & CIT - 2019 - https://ajflynn.io/
 */
 
 class Member extends Controller 
