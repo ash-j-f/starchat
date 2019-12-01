@@ -10,7 +10,7 @@ To install the application server on a local machine, install as per instruction
 
 NOTE: The ".htaccess" files in the top level, and also in the /app and /public directories define the Apache URL rewrite access path 
 that enable the MVC system. They also protect the /app and /conf directories from direct public access.
-
+```
 /public - Main index.php file.
     /js - All JavaScript files.
     /css - All CSS files.
@@ -22,7 +22,7 @@ that enable the MVC system. They also protect the /app and /conf directories fro
     /games - Files for inbuilt game logic (the Blackjack game).
     /core - Core files that deliver the MVC framework, database connection, Google ReCaptcha, Markdown Text Parsing, etc.
     /controllers - All MVC controllers.
-
+```
 
 ## Key Features
 
