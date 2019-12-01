@@ -12,16 +12,16 @@ NOTE: The ".htaccess" files in the top level, and also in the /app and /public d
 that enable the MVC system. They also protect the /app and /conf directories from direct public access.
 
 /public - Main index.php file.
-	/js - All JavaScript files.
-	/css - All CSS files.
-	/images - All image files.
+    /js - All JavaScript files.
+    /css - All CSS files.
+    /images - All image files.
 /conf - Application "config.ini" file as well as the SQL initialisation file "init.sql" (which is run automatically, so please do not run it manually).
 /app
-	/views - All MVC Views
-	/models - All MVC models.
-	/games - Files for inbuilt game logic (the Blackjack game).
-	/core - Core files that deliver the MVC framework, database connection, Google ReCaptcha, Markdown Text Parsing, etc.
-	/controllers - All MVC controllers.
+    /views - All MVC Views
+    /models - All MVC models.
+    /games - Files for inbuilt game logic (the Blackjack game).
+    /core - Core files that deliver the MVC framework, database connection, Google ReCaptcha, Markdown Text Parsing, etc.
+    /controllers - All MVC controllers.
 
 
 ## Key Features

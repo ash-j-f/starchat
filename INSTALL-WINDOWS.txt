@@ -130,7 +130,13 @@ Configure Starchat config.ini
 		Edit the Starchat config.ini and be sure to add/check:
 		
 			* Set Captcha on or off. Set it OFF for a localhost test "EnableCaptcha = false" or you will not be able to create accounts or log in.
+			* Set the Captcha public and secret keys. See https://www.google.com/recaptcha/
 			* Set superuser account names in the "SuperUser" list. Eg: "Ash,Bob". These users are the highest level global admins.
-			
+
 YOU CAN NOW CREATE ACCOUNTS AND LOG IN AT http://localhost/
+
+Set up Superuser Account in Starchat
+	
+		* Create an account using the Signup page in Starchat.
+		* Go to (starchat application directory)/conf/config.ini and add the new account's name to the SuperUser list.
 			

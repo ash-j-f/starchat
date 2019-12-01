@@ -71,10 +71,11 @@ Install
 	
 		***IF NOT USING RECAPTCHA: Set "EnableCaptcha = false" in Starchat config.ini
 	
-		Set up a Google ReCAPTCHA account for the test domain (eg: for starchat.ajflynn.io, or for the test server's IP like 192.168.6.135).
-		https://www.google.com/recaptcha/
+		Set up a Google ReCAPTCHA account for the test domain. See https://www.google.com/recaptcha/
 		Enter the public and private keys for the captcha into starchat application directory)/conf/config.ini.	
-			
+	
+	YOU CAN NOW CREATE ACCOUNTS AND LOG IN AT http://localhost/
+	
 	Set up Superuser Account in Starchat
 	
 		* Create an account using the Signup page in Starchat.
