@@ -144,3 +144,7 @@ that enable the MVC system. They also protect the /app and /conf directories fro
 * MVC framework based on ideas by:
 	* https://github.com/panique and https://github.com/JaoNoctus and their simple MVC framework "MINI3" https://github.com/panique/mini3
 	* An excellent MVC tutorial by https://codecourse.com/ at https://www.youtube.com/watch?v=OsCTzGASImQ&list=PLfdtiltiRHWGXVHXX09fxXDi-DqInchFD
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the file "LICENSE" for more details.
