@@ -1,0 +1,136 @@
+
+Install PostgreSQL:
+
+	Download "PostgreSQL Version 11 (or higher) for Windows" from https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+		Run the install file.
+		Use all defaults suggested in the installation procedure.
+		Do not run Stack Builder (there are no additional modules to install).
+
+Set up Database:
+	
+	Run pgAdmin 4:
+		Run "pgAdmin 4" (go to windows start button and search for and run pgAdmin 4 application that was installed as part of PostgreSQL install.
+		The browser will open and show the pgAdmin 4 page.
+	
+	Create Starchat database user:
+		In the dropdown tree on the left, navigate to "PostgreSQL 11 > Login/Group Roles".
+		Right-click "Login/Group Roles" and choose "Create > Login/Group Role...".
+		Under "General" tab, set new account name to "starchat".
+		Under "Definition" tab set password to "starchat".
+		Under "Priviledges" tab set "Can login?" to "Yes".
+		Click Save to create the new user.
+	
+	Create Starchat database:
+		In the dropdown tree on the left, navigate to "PostgreSQL 11 > Databases".
+		Right-click "Databases" and choose "Create > Database...".
+		Under "General" tab, set Database to "starchatdb". NOTE: The name has "db" at the end!
+		Under "General" tab, set "Owner" to starchat user created in previous step.
+		Under "Definition" tab, ensure "Encoding" is set to "UTF-8".
+		Click Save to create the database.
+		
+Set up Apache Webserver:
+	
+	****If the following Apache install instructions do not work, try following all steps in the "readme_first.html" file included with the Apache zip file.
+	
+	Install the Apache server:
+	
+		Download Apache for Windows from https://www.apachehaus.com/cgi-bin/download.plx
+			Click one of the icons under "Download Locations" under the entry for "VC15 x64 Thread Safe (2019-May-29 15:24:36)" (or higher version).	
+			NOTE: YOU MUST USE THE "THREAD SAFE" VERSION so check the title carefully.
+		Extract the downloaded Zip file.
+		Move the extracted directory to your preferred install location.
+		
+	Edit Apache Configuration:
+	
+		Edit the file "(Apache install directory)/Apache24/conf/httpd.conf".
+		
+			Add to the TOP of the file:
+				LoadFile "C:/Program Files/PostgreSQL/11/bin/libpq.dll"     <-- Or wherever Postgresql installed this DLL! Check it is there!
+				AddHandler application/x-httpd-php .php
+				AddType application/x-httpd-php .php .html
+				LoadModule php7_module "(PHP install dir)\php7apache2_4.dll"     
+					^^^^ NOTE: Make sure this DLL file exists at the specified location! If not then you have the wrong version of PHP.
+				PHPIniDir "(PHP install dir)" 
+					* NOTE: Replace "(PHP install dir)" with your PHP directory name eg: "C:\PHP7\".
+		
+			Make sure "index.php" is listed in the following "DirectoryIndex" block:
+				<IfModule dir_module>
+					DirectoryIndex index.html index.php
+				</IfModule>
+		
+			Change the line from 
+				Define SRVROOT "/Apache24"
+			to your install location eg:
+				Define SRVROOT "C:\Users\ashle\Downloads\httpd-2.4.39-o102s-x64-vc14\Apache24"
+			
+			Uncomment the lines:
+				LoadModule rewrite_module modules/mod_rewrite.so
+				and
+				LoadModule headers_module modules/mod_headers.so
+			
+			Find the section in the config file that looks like
+				<Directory "${SRVROOT}/htdocs">
+					Add this line directly under it:
+						Header always append X-Frame-Options DENY
+					Find the option in this section that looks like
+						AllowOverride None
+					change it to...
+						AllowOverride All
+	
+	Install PHP:
+	
+		Download the PHP "Thread Safe" install from https://windows.php.net/download/
+			Click the Zip link under "VC15 x64 Non Thread Safe (2019-May-29 15:24:20)" (or any newer version).
+		Extract the downloaded Zip file.
+		Move the extracted directory to your preferred install location.
+		
+	Configure PHP:
+		Rename the file "(PHP install dir)/php.ini-production" to "php.ini".
+		Edit the php.ini file and ensure these settings are as follows:
+			short_open_tag = On
+			session.use_strict_mode = 1
+			session.use_only_cookies = 1
+			session.cookie_httponly = 1
+			session.cookie_secure = 1 ;ONLY IF INSTALLING HTTPS/TLS/SSL LATER!
+			extension_dir = "C:\Users\ashle\Downloads\php-7.3.6-Win32-VC15-x64\ext\"     <-- The full path to the "ext" dir in your PHP install and TRAILING SLASH.
+		Uncomment the following:
+			extension=mbstring
+			extension=pgsql
+	
+	Install the Starchat program files:
+		Delete the example files in "(Apache install directory)/Apache24/htdocs".
+		Copy the Starchat program files to directory "(Apache install directory)/Apache24/htdocs".
+		If files are in correct location, this install help file and directories like "app", "conf" and "public" should appear directly under "(Apache install directory)/Apache24/htdocs".
+			
+	To RUN the Apache Webserver:
+	
+		Run Windows Command Prompt (Windows Key + R, and then type "cmd").
+		Change directory to (Apache install directory)/Apache24/bin
+		Run "httpd.exe".
+		
+	To STOP the Apache Webserver:
+	
+		Select the Apache console window.
+		Press Ctrl+C.
+
+	Configure HTTPS/TLS/SSL:
+	
+		This process to configure SSL and obtain a site certificate is beyond the scope of this document. 
+		To access this site in HTTPS mode, you must obtain self signed SSL certificates, or certificates issued by a certifying authority.
+		Please see advice on Google for configuring an Apache hosted site to use SSL.
+		
+		Once SSL is configured, you must add the following HSTS security option to the Apache httpd.conf file:
+			Find the section in the config file that looks like
+				<Directory "${SRVROOT}/htdocs">
+					Add this line directly under it:
+						Header always set Strict-Transport-Security "max-age=63072000"
+
+Configure Starchat config.ini
+
+		Edit the Starchat config.ini and be sure to add/check:
+		
+			* Set Captcha on or off. Set it OFF for a localhost test "EnableCaptcha = false" or you will not be able to create accounts or log in.
+			* Set superuser account names in the "SuperUser" list. Eg: "Ash,Bob". These users are the highest level global admins.
+			
+YOU CAN NOW CREATE ACCOUNTS AND LOG IN AT http://localhost/
+			
