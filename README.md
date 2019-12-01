@@ -134,7 +134,7 @@ that enable the MVC system. They also protect the /app and /conf directories fro
 
 * Login rate is limited by a pause during each login check, as well as a table row lock during login. This means only one username/password check can be performed at a time per account no matter how many different computers try to log into the same account at once. This helps prevent large scale login attacks by Botnets, or password guessing.
 
-* The Google ReCaptcha challenge system is used for login and signup. This helps prevent bots from attemting to log into accounts or to sign up to create spam accounts.
+* The Google ReCaptcha challenge system is used for login and signup. This helps prevent bots from attempting to log into accounts or to sign up to create spam accounts.
 
 * The X-Frame-Deny header is set, which prevents the site from being embedded in another site's frames.
 
