@@ -1,5 +1,7 @@
 # Starchat web MVC application
 
+A web application designed to demonstrate the Model-View-Controller (MVC) design pattern and cybersecurity concepts in practice.
+
 ## Installation
 
 To install the application server on a local machine, install as per instructions in INSTALL-WINDOWS.txt or INSTALL-UBUNTU-LINUX.txt
