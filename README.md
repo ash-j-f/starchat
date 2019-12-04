@@ -112,11 +112,11 @@ that enable the MVC system. They also protect the /app and /conf directories fro
 
 * The HSTS header is used when hosting in HTTPS mode. This informs the browser to only ever connect to the site in HTTPS mode, protecting against man-in-the-middle attacks that strip the SSL layer. https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
 
-* The HTTPS system is confiured with OCSP stapling, which helps speed up the verification of certificates and certificate authorities. https://en.wikipedia.org/wiki/OCSP_stapling
+* The HTTPS system is configured with OCSP stapling, which helps speed up the verification of certificates and certificate authorities. https://en.wikipedia.org/wiki/OCSP_stapling
 
 * User passwords are hashed using the "bcrypt algorithm" (based on the Blowfish algorithm). This method is resistant to brute force cracking using GPU farms. https://www.php.net/manual/en/function.password-hash.php
 
-* The site uses a Content Security Policy, which is a header that prevents the execution of malicious inline Javascript injected by an XSS attack. https://en.wikipedia.org/wiki/Content_Security_Policy This is defined in the file at (starchat)/app/views/static/header.php in the <head> section.
+* The site uses a Content Security Policy, which is a header that prevents the execution of malicious inline Javascript injected by an XSS attack. https://en.wikipedia.org/wiki/Content_Security_Policy This is defined in the file at (starchat)/app/views/static/header.php in the `<head>` section.
 
 * HTML output is sanitised using the PHP "htmlentities" function which helps prevent XSS attacks through HTML and script injection.
 
